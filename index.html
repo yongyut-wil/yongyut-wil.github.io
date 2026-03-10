@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yongyut Wilachan - Frontend Developer</title>
+    <title>Yongyut Wilachan - Developer</title>
+    <meta name="description" content="Personal CV of Yongyut Wilachan, a result-driven Developer with 3 years of experience specializing in React, TypeScript, and modern web technologies.">
+    <meta name="keywords" content="Developer, React, TypeScript, Yongyut Wilachan, Web Development, CV, Portfolio">
+    <meta property="og:title" content="Yongyut Wilachan - Developer">
+    <meta property="og:description" content="Developer with 3 years of expertise in crafting responsive web applications.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -21,6 +27,7 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            position: relative;
         }
         @media (min-width: 768px) {
             .page-container {
@@ -30,8 +37,44 @@
         }
         @media print {
             body { background-color: white; margin: 0; padding: 0; }
-            .page-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; }
-            /* Hide non-essential elements for printing if any */
+            .page-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; border-radius: 0; }
+            .print-btn { display: none; }
+            aside { background-color: #1e293b !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .bg-blue-600 { background-color: #2563eb !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .text-blue-400 { color: #60a5fa !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 0.875rem 1.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 50;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+        .print-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 10px 10px -5px rgba(37, 99, 235, 0.1);
+            filter: brightness(110%);
+        }
+        .print-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+        .print-btn i {
+            transition: transform 0.3s ease;
+        }
+        .print-btn:hover i {
+            transform: rotate(-10deg) scale(1.1);
         }
     </style>
 </head>
@@ -49,7 +92,7 @@
             </div>
 
             <h1 class="text-3xl font-bold tracking-wider mb-1 text-center md:text-left uppercase">Yongyut<br/>Wilachan</h1>
-            <h2 class="text-lg text-blue-400 font-medium mb-8 tracking-widest uppercase text-center md:text-left">Frontend Developer</h2>
+            <h2 class="text-lg text-blue-400 font-medium mb-8 tracking-widest uppercase text-center md:text-left">Developer</h2>
 
             <!-- Contact Section -->
             <div class="w-full mb-8">
@@ -77,21 +120,41 @@
             <!-- Skills Section -->
             <div class="w-full mb-8">
                 <h3 class="text-xl font-bold mb-4 border-b border-slate-600 pb-2 uppercase tracking-wider">Skills</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">JavaScript</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">TypeScript</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">React</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Redux</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Zustand</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Next.js</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Antd</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">MUI</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Node.js</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Express</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Nest.js</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">PostgreSQL</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Docker</span>
-                    <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Git</span>
+                
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">Frontend</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">React</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">TypeScript</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Next.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Zustand</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Redux</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">MUI</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Antd</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">Backend & Database</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Node.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Nest.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Express.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">DevOps & Tools</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Docker</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Kubernetes</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Git</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Linux / CLI</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -121,7 +184,7 @@
                     <i class="fa-solid fa-user-tie text-blue-600"></i> Profile
                 </h3>
                 <p class="text-gray-600 leading-relaxed text-justify">
-                    A result-driven Frontend Developer with 3 years of expertise in crafting responsive web applications. Strong command of React, TypeScript, and MUI, with a focus on managing complex states using Zustand. Experienced in developing large-scale healthcare systems and mobile-first solutions for LINE OA, ensuring seamless API integration and high-quality UI/UX.
+                    A result-driven Developer with 3 years of expertise in building scalable web applications and AI-integrated solutions. Proficient in modern Frontend technologies like React and TypeScript, alongside Backend development with Node.js and NestJS. Experienced in architecting healthcare systems and mobile-first solutions for LINE OA, with a strong focus on high-quality UI/UX and seamless system integration.
                 </p>
             </section>
 
@@ -169,9 +232,9 @@
                     <h5 class="text-md font-semibold text-slate-600 mb-3"><i class="fa-regular fa-building mr-2"></i>ICON Framework CO., Ltd.</h5>
                     
                     <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
-                        <li><strong>Project Management:</strong> Managed task planning and team progress using a Kanban board, maintained issue logs to track and resolve blockers, and contributed minor backend logic for estimate man-day calculations.</li>
-                        <li><strong>Hospital Information System:</strong> Design and enhance user interfaces for the Hospital Information System (HIS) to ensure an intuitive and user-friendly experience.</li>
-                        <li><strong>Back-Office System:</strong> Collaborate with cross-functional teams to translate requirements into features for the Back-Office System.</li>
+                        <li><strong>Project Management & Backend Development:</strong> Coordinated the "Resource Estimation" module, managing team progress via Kanban while developing the backend service for man-day calculation logic.</li>
+                        <li><strong>Hospital Information System:</strong> Enhanced core system modules and user interfaces for the HIS, ensuring high performance and intuitive workflows for medical staff.</li>
+                        <li><strong>Back-Office System (Cross-team Support):</strong> Provided technical assistance to other teams in developing internal management tools, contributing to architecture design and feature implementation to meet business requirements.</li>
                     </ul>
                 </div>
             </section>
@@ -187,10 +250,23 @@
                     <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
                     <h4 class="text-xl font-bold text-slate-800 mb-2">Full-Stack Blog Platform</h4>
                     <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
-                        <li>Architected a high-performance personal blog utilizing a modern stack: <strong>Next.js</strong> (Frontend), <strong>NestJS</strong> (Backend), and <strong>PostgreSQL</strong>.</li>                    </ul>
+                        <li>Architected a high-performance personal blog utilizing a modern stack: <strong>Next.js</strong> (Frontend), <strong>NestJS</strong> (Backend), and <strong>PostgreSQL</strong>.</li>
+                        <li>Integrated <strong>Kubernetes (K8s)</strong> to streamline local development, enhancing environment consistency and scalability.</li>
+                    </ul>
                 </div>
 
                 <!-- Project 2 -->
+                <div class="mb-6 relative border-l-2 border-indigo-200 pl-6 pb-2">
+                    <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">AI Chatbot Agent (LINE Integration)</h4>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
+                        <li>Developed an intelligent AI agent using the <strong>OpenClaw</strong> framework, integrated with <strong>LINE Messaging API</strong> to automate tasks and provide context-aware responses.</li>
+                        <li>Implemented <strong>LLM-powered agents</strong> capable of executing specific tasks (e.g., web browsing, file management, or scheduling) directly through the LINE interface.</li>
+                        <li>Configured secure <strong>Webhook</strong> integration and managed persistent conversation memory for a personalized user experience.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
                 <div class="relative border-l-2 border-indigo-200 pl-6 pb-2">
                     <div class="absolute w-4 h-4 bg-indigo-400 rounded-full -left-[9px] top-1 border-4 border-white"></div>
                     <h4 class="text-xl font-bold text-slate-800 mb-2">Expense Tracker API</h4>
@@ -207,8 +283,8 @@
                     <i class="fa-solid fa-graduation-cap text-blue-600"></i> Education
                 </h3>
                 <div class="bg-slate-50 border border-slate-100 p-4 rounded-lg">
-                    <h4 class="text-lg font-bold text-slate-800">Information Technology</h4>
-                    <p class="text-slate-600">SUAN SUNANDHA RAJABHAT UNIVERSITY</p>
+                    <h4 class="text-lg font-bold text-slate-800">Bachelor of Science in Information Technology</h4>
+                    <p class="text-slate-600 font-medium">SUAN SUNANDHA RAJABHAT UNIVERSITY</p>
                 </div>
             </section>
 
@@ -218,7 +294,7 @@
                 <div class="bg-gray-50 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <p class="font-bold text-slate-800">Thatsanai Boon.</p>
-                        <p class="text-sm text-gray-500">Sa | Head Developer, Cliniter</p>
+                        <p class="text-sm text-gray-500 font-medium">System Analyst | Head Developer, Cliniter</p>
                     </div>
                     <div class="text-sm text-gray-600 text-left md:text-right space-y-1">
                         <p><i class="fa-solid fa-phone text-blue-500 mr-2"></i>099-056-1155</p>
@@ -229,6 +305,11 @@
 
         </main>
     </div>
+
+    <button onclick="window.print()" class="print-btn no-print">
+        <i class="fa-solid fa-print"></i>
+        <span>Print PDF</span>
+    </button>
 
 </body>
 </html>
