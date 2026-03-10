@@ -120,8 +120,10 @@
         <aside class="w-full md:w-1/3 bg-slate-800 text-white p-8 flex flex-col items-center md:items-start print:bg-slate-800 print:text-white">
             
             <!-- Profile Image -->
-            <div class="w-40 h-40 rounded-full border-4 border-slate-600 overflow-hidden mb-6 flex-shrink-0 bg-white">
-                 <img src="./assets/profile.jpg" alt="Yongyut Wilachan" class="w-full h-full object-cover object-[50%_25%]">
+            <div class="w-40 h-40 rounded-full border-4 border-slate-600 overflow-hidden mb-6 flex-shrink-0 bg-white relative group cursor-pointer">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="./assets/profile.jpg" alt="Yongyut Wilachan" class="w-full h-full object-cover object-[50%_25%] transition-all duration-500 group-hover:rotate-3 group-hover:scale-105">
+                <div class="absolute inset-0 border-4 border-transparent rounded-full group-hover:border-blue-500 transition-all duration-300"></div>
                 <!-- <img src="https://via.placeholder.com/200x200.png?text=Profile+Image" alt="Yongyut Wilachan" class="w-full h-full object-cover"> -->
             </div>
 
@@ -132,20 +134,20 @@
             <div class="w-full mb-8">
                 <h3 class="text-xl font-bold mb-4 border-b border-slate-600 pb-2 uppercase tracking-wider">Contact</h3>
                 <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-center gap-3 hover:text-white transition">
-                        <i class="fa-solid fa-phone w-5 text-center text-blue-400"></i>
+                    <li class="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1">
+                        <i class="fa-solid fa-phone w-5 text-center text-blue-400 transition-transform duration-300 hover:scale-110"></i>
                         <span>+668-6907-5877</span>
                     </li>
-                    <li class="flex items-center gap-3 hover:text-white transition">
-                        <i class="fa-solid fa-envelope w-5 text-center text-blue-400"></i>
+                    <li class="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1">
+                        <i class="fa-solid fa-envelope w-5 text-center text-blue-400 transition-transform duration-300 hover:scale-110"></i>
                         <a href="mailto:yongyut.wilachan@gmail.com" class="break-all">yongyut.wilachan@gmail.com</a>
                     </li>
-                    <li class="flex items-center gap-3 hover:text-white transition">
-                        <i class="fa-solid fa-location-dot w-5 text-center text-blue-400"></i>
+                    <li class="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1">
+                        <i class="fa-solid fa-location-dot w-5 text-center text-blue-400 transition-transform duration-300 hover:scale-110"></i>
                         <span>Bangkok, Ram Inthra</span>
                     </li>
-                    <li class="flex items-center gap-3 hover:text-white transition">
-                        <i class="fa-brands fa-github w-5 text-center text-blue-400"></i>
+                    <li class="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1">
+                        <i class="fa-brands fa-github w-5 text-center text-blue-400 transition-transform duration-300 hover:scale-110"></i>
                         <a href="https://github.com/yongyut-wil" target="_blank">github.com/yongyut-wil</a>
                     </li>
                 </ul>
@@ -159,34 +161,34 @@
                     <div>
                         <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">Frontend</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">React</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">TypeScript</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Next.js</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Zustand</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Redux</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">MUI</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Antd</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">JavaScript</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">React</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">TypeScript</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">Next.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">Zustand</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">Redux</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">MUI</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">Antd</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:border-blue-400 cursor-pointer">JavaScript</span>
                         </div>
                     </div>
 
                     <div>
                         <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">Backend & Database</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Node.js</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Nest.js</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Express.js</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">PostgreSQL</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-green-600 hover:border-green-400 cursor-pointer">Node.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-green-600 hover:border-green-400 cursor-pointer">Nest.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-green-600 hover:border-green-400 cursor-pointer">Express.js</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-green-600 hover:border-green-400 cursor-pointer">PostgreSQL</span>
                         </div>
                     </div>
 
                     <div>
                         <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">DevOps & Tools</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Docker</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Kubernetes</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Git</span>
-                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600">Linux / CLI</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-orange-600 hover:border-orange-400 cursor-pointer">Docker</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-orange-600 hover:border-orange-400 cursor-pointer">Kubernetes</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-orange-600 hover:border-orange-400 cursor-pointer">Git</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-orange-600 hover:border-orange-400 cursor-pointer">Linux / CLI</span>
                         </div>
                     </div>
                 </div>
