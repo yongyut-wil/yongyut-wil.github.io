@@ -37,11 +37,44 @@
         }
         @media print {
             body { background-color: white; margin: 0; padding: 0; }
-            .page-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; border-radius: 0; }
-            .print-btn { display: none; }
+            .page-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; border-radius: 0; padding: 15mm 10mm; }
+            .print-btn, .no-print { display: none !important; }
             aside { background-color: #1e293b !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
             .bg-blue-600 { background-color: #2563eb !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
             .text-blue-400 { color: #60a5fa !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            
+            /* Hide browser headers and footers completely */
+            @page {
+                margin: 0;
+                size: A4;
+            }
+            
+            /* Ensure content fits properly */
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            /* Fix page breaks */
+            section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-top: 20px;
+            }
+            
+            .relative.border-l-2 {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            main {
+                page-break-inside: auto;
+            }
+            
+            /* Add spacing for page transitions */
+            section:first-child {
+                margin-top: 0;
+            }
         }
         .print-btn {
             position: fixed;
