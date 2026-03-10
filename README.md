@@ -22,7 +22,6 @@ A professional and modern CV website built with HTML, Tailwind CSS, and JavaScri
 - HTML5
 - Tailwind CSS
 - Font Awesome Icons
-- Vanilla JavaScript
 
 ### View Live
 
