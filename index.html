@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yongyut Wilachan - Developer</title>
-    <meta name="description" content="Personal CV of Yongyut Wilachan, a result-driven Developer with 3 years of experience specializing in React, TypeScript, and modern web technologies.">
+    <meta name="description" content="Personal CV of Yongyut Wilachan, a result-driven Fullstack Developer with 4 years of experience specializing in React, TypeScript, Node.js, and AI agent tooling.">
     <meta name="keywords" content="Developer, React, TypeScript, Yongyut Wilachan, Web Development, CV, Portfolio">
     <meta property="og:title" content="Yongyut Wilachan - Developer">
-    <meta property="og:description" content="Developer with 3 years of expertise in crafting responsive web applications.">
+    <meta property="og:description" content="Fullstack Developer with 4 years of expertise building scalable web applications and AI-integrated solutions.">
     <meta property="og:type" content="website">
     <meta name="robots" content="index, follow">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,44 +37,85 @@
         }
         @media print {
             body { background-color: white; margin: 0; padding: 0; }
-            .page-container { margin: 0; box-shadow: none; width: 100%; max-width: 100%; border-radius: 0; padding: 15mm 10mm; }
+            /* Chrome/Edge fail to fragment flex containers across printed pages
+               reliably (a flex column taller than one page can render as a blank
+               first page while its content is pushed to page 2+). .page-container,
+               aside, and main are all Tailwind `flex flex-col` — switch all three
+               to plain block layout for print so normal, well-supported block-flow
+               pagination applies instead. */
+            .page-container {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0;
+                padding: 12mm 10mm;
+                display: block !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+            /* Content now runs several pages long — tighten vertical spacing
+               (not font size, to keep it readable) so more fits per page. */
+            .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.35rem !important; }
+            .mb-8 { margin-bottom: 1.25rem !important; }
+            .mb-6 { margin-bottom: 1rem !important; }
+            .mb-4 { margin-bottom: 0.75rem !important; }
             .print-btn, .no-print { display: none !important; }
-            aside { background-color: #1e293b !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            aside {
+                display: block !important;
+                width: 100% !important;
+                background-color: #1e293b !important;
+                border-radius: 8px;
+                margin-bottom: 10mm;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            main {
+                display: block !important;
+                width: 100% !important;
+            }
             .bg-blue-600 { background-color: #2563eb !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
             .text-blue-400 { color: #60a5fa !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-            
+
             /* Hide browser headers and footers completely */
             @page {
                 margin: 0;
                 size: A4;
             }
-            
+
             /* Ensure content fits properly */
             body {
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
-            
+
             /* Fix page breaks */
             section {
                 page-break-inside: avoid;
                 break-inside: avoid;
-                margin-top: 20px;
+                margin-top: 12px;
             }
-            
+
             .relative.border-l-2 {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
-            
+
             main {
                 page-break-inside: auto;
-                margin-top: 10mm; /* เพิ่มระยะห่างจากขอบบนเมื่อพิมพ์ */
+                margin-top: 0;
             }
-            
+
             /* Add spacing for page transitions */
             section:first-child {
                 margin-top: 0;
+            }
+
+            /* .mt-auto only makes sense to push content to the bottom inside a flex
+               column; in print's block layout it resolves to 0, so restore a normal
+               section gap before Reference explicitly. */
+            main .mt-auto {
+                margin-top: 12px !important;
             }
         }
         .print-btn {
@@ -128,7 +169,7 @@
             </div>
 
             <h1 class="text-3xl font-bold tracking-wider mb-1 text-center md:text-left uppercase">Yongyut<br/>Wilachan</h1>
-            <h2 class="text-lg text-blue-400 font-medium mb-8 tracking-widest uppercase text-center md:text-left">Developer</h2>
+            <h2 class="text-lg text-blue-400 font-medium mb-8 tracking-widest uppercase text-center md:text-left">Fullstack Developer</h2>
 
             <!-- Contact Section -->
             <div class="w-full mb-8">
@@ -183,6 +224,7 @@
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-500 hover:border-blue-300 cursor-pointer">Prisma ORM</span>
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-blue-500 hover:border-blue-300 cursor-pointer">TypeORM</span>
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-cyan-600 hover:border-cyan-400 cursor-pointer">PostgreSQL</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-emerald-600 hover:border-emerald-400 cursor-pointer">Supabase</span>
                         </div>
                     </div>
 
@@ -194,6 +236,18 @@
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-gray-600 hover:border-gray-400 cursor-pointer">Git</span>
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-gray-600 hover:border-gray-400 cursor-pointer">GitHub Actions</span>
                             <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-yellow-600 hover:border-yellow-400 cursor-pointer">Linux / CLI</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-orange-600 hover:border-orange-400 cursor-pointer">Bun</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-teal-600 hover:border-teal-400 cursor-pointer">Caddy</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-red-600 hover:border-red-400 cursor-pointer">MinIO</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-blue-400 uppercase tracking-tighter mb-2">AI & LLM Tools</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-400 cursor-pointer">MCP (Model Context Protocol)</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-400 cursor-pointer">Promptfoo</span>
+                            <span class="bg-slate-700 text-blue-200 px-3 py-1 text-xs rounded-full border border-slate-600 transition-all duration-300 hover:scale-110 hover:bg-violet-600 hover:border-violet-400 cursor-pointer">LiteLLM</span>
                         </div>
                     </div>
                 </div>
@@ -263,7 +317,7 @@
                     <i class="fa-solid fa-user-tie text-blue-600"></i> Profile
                 </h3>
                 <p class="text-gray-600 leading-relaxed text-justify">
-                    A result-driven Developer with 3 years of expertise in building scalable web applications and AI-integrated solutions. Proficient in modern Frontend technologies like React and TypeScript, alongside Backend development with Node.js and NestJS. Experienced in architecting healthcare systems and mobile-first solutions for LINE OA, with a strong focus on high-quality UI/UX and seamless system integration.
+                    A result-driven Fullstack Developer with 4 years of experience building scalable web applications and AI-integrated solutions. Proficient in modern Frontend technologies like React and TypeScript, alongside Backend development with Node.js and NestJS. Experienced in architecting healthcare systems, mobile-first solutions for LINE OA, and AI agent tooling & evaluation pipelines, with a strong focus on high-quality UI/UX and seamless system integration.
                 </p>
             </section>
 
@@ -277,11 +331,43 @@
                 <div class="mb-8 relative border-l-2 border-blue-200 pl-6 pb-2">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1 border-4 border-white"></div>
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-800">Fullstack Developer</h4>
+                        <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-max mt-1 md:mt-0">Apr 2026 - Present</span>
+                    </div>
+                    <h5 class="text-md font-semibold text-slate-600 mb-3"><i class="fa-regular fa-building mr-2"></i>Tong Hua Labs</h5>
+
+                    <div class="mb-4">
+                        <h6 class="font-bold text-sm text-slate-700 mb-2 bg-gray-100 px-2 py-1 rounded inline-block">AI Agent Tooling & Evaluation</h6>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
+                            <li>Built an <strong>OpenCLI</strong> adapter/plugin ecosystem to extend AI agents with external data sources and business tools, including cross-platform (Windows-compatible) installer tooling.</li>
+                            <li>Developed multiple data-source plugins for the ecosystem, including a company-data lookup tool and several social-media data-scraping connectors, each with pagination, timeout handling, and rate-limit-aware partial-result support.</li>
+                            <li>Designed and implemented a <strong>Promptfoo</strong>-based evaluation framework to test an AI agent's <strong>MCP</strong> (Model Context Protocol) tool-calling accuracy across a 6-domain test suite, with CI/CD automation and persistent report history.</li>
+                            <li>Iteratively debugged and refined test rubrics, improving eval reliability from initial runs to consistent 190+/194 pass rates.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h6 class="font-bold text-sm text-slate-700 mb-2 bg-gray-100 px-2 py-1 rounded inline-block">Voice & Call Analysis</h6>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
+                            <li>Prototyped a self-hosted voice-conversation-analysis platform from scratch — self-hosted authentication (SSR + row-level-security policies) with direct SSO integration to the identity provider, secrets management, and containerized deployment with automated code-quality gating.</li>
+                            <li>Implemented ffmpeg-based audio chunking and an AI/ML query layer with retry logic and health checks to reliably process long recordings through speech-to-text and LLM summarization.</li>
+                            <li>Built a voice/call analysis feature end-to-end: an audio ingestion pipeline with speech-to-text transcription and AI-based call classification and tagging.</li>
+                            <li>Developed a review UI with audio playback, filters, and role-based access control for the voice-analysis workflow.</li>
+                            <li>Optimized data-filtering performance for call-activity queries, migrating from embedded joins to denormalized columns.</li>
+                            <li>Added retry logic and chunking support for large audio files, plus automated audit/verification tooling and end-to-end smoke tests.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="mb-8 relative border-l-2 border-blue-200 pl-6 pb-2">
+                    <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Frontend Developer</h4>
-                        <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-max mt-1 md:mt-0">2024 - Present</span>
+                        <span class="text-sm font-semibold text-gray-600 bg-gray-100 px-3 py-1 rounded-full w-max mt-1 md:mt-0">2024 - Apr 2026</span>
                     </div>
                     <h5 class="text-md font-semibold text-slate-600 mb-3"><i class="fa-regular fa-building mr-2"></i>CLINITER CO., LTD.</h5>
-                    
+
                     <div class="mb-4">
                         <h6 class="font-bold text-sm text-slate-700 mb-2 bg-gray-100 px-2 py-1 rounded inline-block">Dental Appointment System (LINE LIFF)</h6>
                         <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
@@ -301,7 +387,7 @@
                     </div>
                 </div>
 
-                <!-- Job 2 -->
+                <!-- Job 3 -->
                 <div class="relative border-l-2 border-blue-200 pl-6">
                     <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-[9px] top-1 border-4 border-white"></div>
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
@@ -350,17 +436,17 @@
                 <!-- Project 2: Blog Platform (Original) -->
                 <div class="mb-6 relative border-l-2 border-indigo-200 pl-6 pb-2">
                     <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">Full-Stack Blog Platform</h4>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">OpenAI-Compatible API Proxy for AI Coding Agents</h4>
                     <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
-                        <li>Architected a high-performance personal blog utilizing a modern stack: <strong>Next.js</strong> (Frontend), <strong>NestJS</strong> (Backend), and <strong>PostgreSQL</strong>.</li>
-                        <li>Integrated <strong>Kubernetes (K8s)</strong> to streamline local development, enhancing environment consistency and scalability.</li>
+                        <li>Built a <strong>gRPC</strong> + <strong>REST</strong> proxy exposing an OpenAI-compatible chat-completions API (plus Ollama-compatible endpoints) to route requests through a third-party AI coding agent's credentials, including streaming-response support.</li>
+                        <li>Rewrote the proxy from Python to <strong>TypeScript</strong>/<strong>Bun</strong> for performance, compiling to a single native binary.</li>
                     </ul>
                 </div>
 
                 <!-- Project 3: AI Chatbot (Original) -->
                 <div class="relative border-l-2 border-indigo-200 pl-6 pb-2">
                     <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">AI Chatbot Agent (LINE Integration) + OpenClaw</h4>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">AI Chatbot Agent (LINE Integration)</h4>
                     <ul class="list-disc list-outside ml-5 space-y-2 text-gray-600 text-sm">
                         <li>Developed an intelligent AI agent using the <strong>OpenClaw</strong> framework, integrated with <strong>LINE Messaging API</strong> to automate tasks and provide context-aware responses.</li>
                         <li>Implemented <strong>LLM-powered agents</strong> capable of executing specific tasks (e.g., web browsing, file management, or scheduling) directly through the LINE interface.</li>
